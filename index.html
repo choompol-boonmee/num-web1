@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>NUM.EDIPA</title>
+<link rel="canonical" href="https://num.edipa.org">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<style>
+.tt1 {font-size:2vw; font-weight: bold; text-decoration: underline;}
+.tx1 {font-size:2vw;}
+</style>
+
+</head>
+
+<body>
+
+<!-- Sidebar -->
+<div class="w3-sidebar w3-bar-block w3-border-right" style="display:none" id="mySidebar">
+  <button onclick="w3_close()" class="w3-bar-item w3-large">Close &times;</button>
+  <a href="#" class="w3-bar-item w3-button">Link 1</a>
+  <a href="#" class="w3-bar-item w3-button">Link 2</a>
+  <a href="#" class="w3-bar-item w3-button">Link 3</a>
+</div>
+
+<!-- Page Content -->
+<div class="w3-teal">
+<span style="font-size:2vw; font-weight: bold; valign=center;">
+<button class="w3-button w3-teal w3-xlarge" onclick="w3_open()">☰</button>
+NUM
+</span>
+</div>
+
+<img src="img/drnum-org.jpg" alt="Car">
+
+<div class="w3-container">
+<div class="tx1">
+<span id="wklef">?</span>w+<span id="dylef"></span>d
+</div>
+</div>
+
+<script>
+function w3_open() {
+  document.getElementById("mySidebar").style.display = "block";
+}
+
+function w3_close() {
+  document.getElementById("mySidebar").style.display = "none";
+}
+
+function life_left() {
+  var date1 = new Date();
+  var date2 = new Date("Mar 5, 2068"); 	
+  var timedif = date2.getTime() - date1.getTime(); 
+  var daymil = 3600*1000*24
+  var daydif = Math.floor(timedif / daymil); 
+  var wkdif = Math.floor(daydif/7)
+  var daylef = daydif - wkdif*7;
+
+  document.getElementById("wklef").innerHTML = wkdif;
+  document.getElementById("dylef").innerHTML = daylef;
+}
+life_left();
+</script>
+
+</body>
+</html> 
