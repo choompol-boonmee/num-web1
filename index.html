@@ -39,8 +39,8 @@ NUM
 
 <div class="tx2">
 <span id="wklef">?</span><span class="tx1">
-(<span id="dylef"></span>)</span>
-<span id="ddlef">?</span>
+(<span id="dylef">??</span>)</span>
+<span id="ddlef">???</span>
 </div>
 
 <script>
@@ -68,8 +68,8 @@ function life_left() {
   var daydif = days_left(wowday);
   var wkdif = Math.floor(daydif/7)
   document.getElementById("wklef").innerHTML = wkdif;
-  document.getElementById("dylef").innerHTML = daylef;
-  document.getElementById("ddlef").innerHTML = daydif;
+  //document.getElementById("dylef").innerHTML = daylef;
+  //document.getElementById("ddlef").innerHTML = daydif;
 }
 
 life_left();
