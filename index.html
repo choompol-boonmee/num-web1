@@ -38,7 +38,9 @@ NUM
 <div class="w3-container">
 
 <div class="tx2">
-<span id="wklef">?</span><span class="tx1">
+<span id="yrlef">?</span>
+<span id="molef">?</span>
+<span id="wklef">?</span>
 <span id="ddlef">???</span>
 </div>
 
@@ -66,8 +68,12 @@ function days_left(date2) {
 function life_left() {
   var daydif = days_left(wowday);
   var wkdif = Math.floor(daydif/7);
+  var modif = Math.floor(daydif/30);
+  var yrdif = Math.floor(daydif/365.25);
   document.getElementById("wklef").innerHTML = wkdif;
   document.getElementById("ddlef").innerHTML = daydif;
+  document.getElementById("molef").innerHTML = modif;
+  document.getElementById("yrlef").innerHTML = yrdif;
 }
 
 life_left();
