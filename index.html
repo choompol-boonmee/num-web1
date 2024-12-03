@@ -38,20 +38,8 @@ NUM
 <div class="w3-container">
 
 <div class="tx2">
-My Time is
 <span id="wklef">?</span><span class="tx1">(<span id="dylef"></span>)</span>
-</div>
-
-<div class="tx2">
-B-Bro is
-<span id="bbrow">?</span><span class="tx1">(<span id="bbrod"></span>)</span>
-</div>
-
-<div class="tx2">
-CIMUG TU is
-<span id="cimugw">?</span><span class="tx1">(<span id="cimugd"></span>)</span>
-</div>
-
+<span id="ddlef">?</span><span class="tx1">
 </div>
 
 <script>
@@ -78,30 +66,12 @@ function days_left(date2) {
 function life_left() {
   var daydif = days_left(wowday);
   var wkdif = Math.floor(daydif/7)
-  var daylef = daydif - wkdif*7;
   document.getElementById("wklef").innerHTML = wkdif;
   document.getElementById("dylef").innerHTML = daylef;
-}
-
-function bbro_left() {
-  var daydif = days_left(bbroday);
-  var wkdif = Math.floor(daydif/7)
-  var daylef = daydif - wkdif*7;
-  document.getElementById("bbrow").innerHTML = wkdif;
-  document.getElementById("bbrod").innerHTML = daylef;
-}
-
-function cimug_left() {
-  var daydif = days_left(cimug);
-  var wkdif = Math.floor(daydif/7)
-  var daylef = daydif - wkdif*7;
-  document.getElementById("cimugw").innerHTML = wkdif;
-  document.getElementById("cimugd").innerHTML = daylef;
+  document.getElementById("ddlef").innerHTML = daydif;
 }
 
 life_left();
-bbro_left();
-cimug_left();
 </script>
 
 </body>
