@@ -66,9 +66,10 @@ function days_left(date2) {
 
 function life_left() {
   var daydif = days_left(wowday);
-  var wkdif = Math.floor(daydif/7)
+  var wkdif = Math.floor(daydif/7);
+  var dwdif = daydif - wkdir * 7;
   document.getElementById("wklef").innerHTML = wkdif;
-  document.getElementById("dylef").innerHTML = "XX";
+  document.getElementById("dylef").innerHTML = dwdif;
   document.getElementById("ddlef").innerHTML = daydif;
 }
 
