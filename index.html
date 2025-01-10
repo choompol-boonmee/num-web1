@@ -30,8 +30,10 @@ text-align: center;
     <td style="color:red">奴隷</td>
     <td style="color:blue">自由</td>
   </tr>
+</table>
+<table>
   <tr>
-    <td id="time1" style="color:red">奴隷</td>
+    <td id="time1" style="color:red"></td>
   </tr>
 </table>
 
@@ -108,13 +110,12 @@ function life_left() {
 
 life_left();
 
-var time1 = "15:00";
+var time1 = "15:03";
 
 var x = setInterval(function() {
   var now = new Date().getTime();
-  var targ1 = calc_time(time1);
-  var countDownDate = new Date(targ1).getTime();
-  var distance = countDownDate - now;
+  var dtime1 = new Date(calc_time(time1)).getTime();
+  var distance = dtime1 - now;
     
   var days = Math.floor(distance / (1000 * 60 * 60 * 24));
   var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
