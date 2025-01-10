@@ -124,10 +124,7 @@ function life_left() {
 
 life_left();
 
-var x1 = 0;
-
-if task1.length>0 {
-  x1 = setInterval(function() {
+var x1 = setInterval(function() {
       var now = new Date().getTime();
       var dtime = new Date(calc_time(time1)).getTime();
       var dist = dtime - now;
@@ -141,7 +138,6 @@ if task1.length>0 {
         document.getElementById("time1").innerHTML = task1 + " "+time1+ " すぎた";
       }
   }, 1000);
-}
 
 </script>
 
