@@ -30,6 +30,9 @@ text-align: center;
     <td style="color:red">奴隷</td>
     <td style="color:blue">自由</td>
   </tr>
+  <tr>
+    <td id="time1" style="color:red">奴隷</td>
+  </tr>
 </table>
 
 <table>
@@ -61,8 +64,17 @@ NUM
 
 <div class="w3-container">
 
-
 <script>
+
+function calc_time(tm) {
+  var toda = new Date();
+  yy = toda.getFullYear();
+  mm = toda.toLocaleString('default', { month: 'long' });
+  dd = toda.getDate();
+  var targ = mm+" "+dd+", "+yy+" "+tm;
+  return targ;
+}
+
 function w3_open() {
   document.getElementById("mySidebar").style.display = "block";
 }
@@ -95,6 +107,28 @@ function life_left() {
 }
 
 life_left();
+
+var time1 = "15:00";
+
+var x = setInterval(function() {
+  var now = new Date().getTime();
+  var targ1 = calc_time(time1);
+  var countDownDate = new Date(targ1).getTime();
+  var distance = countDownDate - now;
+    
+  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    
+  document.getElementById("time1").innerHTML = hours + "h " + minutes + "m " + seconds + "s ";
+
+  if (distance < 0) {
+    clearInterval(x);
+    document.getElementById("time1").innerHTML = "EXPIRED";
+  }
+}, 1000);
+
 </script>
 
 </body>
