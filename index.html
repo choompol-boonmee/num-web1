@@ -115,21 +115,22 @@ function life_left() {
 
 life_left();
 
-var x1 = setInterval(function() {
-  var now = new Date().getTime();
-  
-  var dtime1 = new Date(calc_time(time1)).getTime();
-  var dist1 = dtime1 - now;
-  var days1 = Math.floor(dist1 / (1000 * 60 * 60 * 24));
-  var hours1 = Math.floor((dist1 % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-  var minutes1 = Math.floor((dist1 % (1000 * 60 * 60)) / (1000 * 60));
-  var seconds1 = Math.floor((dist1 % (1000 * 60)) / 1000);
-  document.getElementById("time1").innerHTML = task1 + " : " + hours1 + "h " + minutes1 + "m " + seconds1 + "s ";
-  if (dist1 < 0) {
-    clearInterval(x1);
-    document.getElementById("time1").innerHTML = task1 + " "+time1+ " すぎた";
-  }
-}, 1000);
+if task1.length()>0 {
+  var x1 = setInterval(function() {
+    var now = new Date().getTime();
+    var dtime = new Date(calc_time(time1)).getTime();
+    var dist = dtime - now;
+    var days = Math.floor(dist / (1000 * 60 * 60 * 24));
+    var hours = Math.floor((dist % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    var minutes = Math.floor((dist % (1000 * 60 * 60)) / (1000 * 60));
+    var seconds = Math.floor((dist % (1000 * 60)) / 1000);
+    document.getElementById("time1").innerHTML = task1 + " : " + hours + "h " + minutes + "m " + seconds + "s ";
+    if (dist < 0) {
+      clearInterval(x1);
+      document.getElementById("time1").innerHTML = task1 + " "+time1+ " すぎた";
+    }
+  }, 1000);
+}
 
 </script>
 
