@@ -57,10 +57,10 @@ var time1 = "21:45";
 
 <table>
   <tr>
-    <td id="yrlef" style="20%"></td>
-    <td id="molef"></td>
-    <td id="wklef"></td>
-    <td id="ddlef"></td>
+    <td id="yrlef" style="width: 20%"></td>
+    <td id="molef" style="width: 20%"></td>
+    <td id="wklef" style="width: 20%"></td>
+    <td id="ddlef" style="width: 20%"></td>
   </tr>
 </table>
 
@@ -120,10 +120,10 @@ function life_left() {
   var wkdif = Math.floor(daydif/7);
   var modif = Math.floor(daydif/30);
   var yrdif = Math.floor(daydif/365.25);
-  document.getElementById("wklef").innerHTML = wkdif;
-  document.getElementById("ddlef").innerHTML = daydif;
-  document.getElementById("molef").innerHTML = modif;
-  document.getElementById("yrlef").innerHTML = yrdif;
+  document.getElementById("wklef").innerHTML = wkdif+"w";
+  document.getElementById("ddlef").innerHTML = daydif+"d";
+  document.getElementById("molef").innerHTML = modif+"m";
+  document.getElementById("yrlef").innerHTML = yrdif+"y";
 }
 
 life_left();
