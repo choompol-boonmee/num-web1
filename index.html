@@ -110,22 +110,20 @@ function life_left() {
 
 life_left();
 
-var time1 = "15:03";
+var time1 = "15:05";
 
-var x = setInterval(function() {
+var x1 = setInterval(function() {
   var now = new Date().getTime();
+  
   var dtime1 = new Date(calc_time(time1)).getTime();
-  var distance = dtime1 - now;
-    
-  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-    
-  document.getElementById("time1").innerHTML = hours + "h " + minutes + "m " + seconds + "s ";
-
-  if (distance < 0) {
-    clearInterval(x);
+  var dist1 = dtime1 - now;
+  var days1 = Math.floor(dist1 / (1000 * 60 * 60 * 24));
+  var hours1 = Math.floor((dist1 % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var minutes1 = Math.floor((dist1 % (1000 * 60 * 60)) / (1000 * 60));
+  var seconds1 = Math.floor((dist1 % (1000 * 60)) / 1000);
+  document.getElementById("time1").innerHTML = hours1 + "h " + minutes1 + "m " + seconds1 + "s ";
+  if (dist1 < 0) {
+    clearInterval(x1);
     document.getElementById("time1").innerHTML = "EXPIRED";
   }
 }, 1000);
