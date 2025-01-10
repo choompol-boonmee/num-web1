@@ -21,6 +21,11 @@ text-align: center;
 }
 </style>
 
+<script>
+var task1 = "ねる";
+var time1 = "15:13";
+</script>
+  
 </head>
 
 <body>
@@ -110,8 +115,6 @@ function life_left() {
 
 life_left();
 
-var time1 = "15:08";
-
 var x1 = setInterval(function() {
   var now = new Date().getTime();
   
@@ -121,10 +124,10 @@ var x1 = setInterval(function() {
   var hours1 = Math.floor((dist1 % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
   var minutes1 = Math.floor((dist1 % (1000 * 60 * 60)) / (1000 * 60));
   var seconds1 = Math.floor((dist1 % (1000 * 60)) / 1000);
-  document.getElementById("time1").innerHTML = hours1 + "h " + minutes1 + "m " + seconds1 + "s ";
+  document.getElementById("time1").innerHTML = task1 + " : " + hours1 + "h " + minutes1 + "m " + seconds1 + "s ";
   if (dist1 < 0) {
     clearInterval(x1);
-    document.getElementById("time1").innerHTML = "EXPIRED";
+    document.getElementById("time1").innerHTML = task1 + " "+time1+ " すぎた";
   }
 }, 1000);
 
