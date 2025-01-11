@@ -149,7 +149,7 @@ var x1 = setInterval(function() {
       document.getElementById("time1").innerHTML = task1 + " : " + hours + "h " + minutes + "m " + seconds + "s (" + calc_time0()+")";
       if (dist < 0) {
         clearInterval(x1);
-        document.getElementById("time1").innerHTML = task1 + " "+time1+ " すぎた";
+        document.getElementById("time1").innerHTML = task1 + " "+time1+ " すぎた (" + calc_time0()+")";
       }
   }, 1000);
 
