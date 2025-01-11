@@ -83,6 +83,19 @@ NUM
 
 <script>
 
+function addZero(i) {
+  if (i < 10) {i = "0" + i}
+  return i;
+}
+
+function calc_time0() {
+  var d = new Date();
+  let hh = addZero(d.getHours());
+  let mi = addZero(d.getMinutes());
+  let se = addZero(d.getSeconds());
+  return hh+":"+mi+":"+se;
+}
+
 function calc_time(tm) {
   var toda = new Date();
   yy = toda.getFullYear();
@@ -133,7 +146,7 @@ var x1 = setInterval(function() {
       var hours = Math.floor((dist % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
       var minutes = Math.floor((dist % (1000 * 60 * 60)) / (1000 * 60));
       var seconds = Math.floor((dist % (1000 * 60)) / 1000);
-      document.getElementById("time1").innerHTML = task1 + " : " + hours + "h " + minutes + "m " + seconds + "s ";
+      document.getElementById("time1").innerHTML = task1 + " : " + hours + "h " + minutes + "m " + seconds + "s (" + calc_time0()+")";
       if (dist < 0) {
         clearInterval(x1);
         document.getElementById("time1").innerHTML = task1 + " "+time1+ " すぎた";
