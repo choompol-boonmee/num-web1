@@ -46,7 +46,7 @@ var time1 = "21:45";
     <td style="text-align: center; width: 20%; color:blue">自由への脱出</td>
     <td style="text-align: center; width: 20%; color:green">限られた時間</td>
     <td style="text-align: center; width: 20%; color:green">価値ある人生</td>
-    <td id='ts'></td>
+    <td id='ts' style="text-align: center;"></td>
   </tr>
 </table>
 
@@ -151,8 +151,7 @@ var x1 = setInterval(function() {
       var hours = Math.floor((dist % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
       var minutes = Math.floor((dist % (1000 * 60 * 60)) / (1000 * 60));
       var seconds = Math.floor((dist % (1000 * 60)) / 1000);
-      document.getElementById("time1").innerHTML = task1 + " : " + hours + "h " + minutes + "m " + seconds + "s (" 
-        + time0+"-"+time1+")";
+      document.getElementById("time1").innerHTML = task1 + " : " + hours + "h " + minutes + "m " + seconds + "s (" +time1+")";
       if (dist < 0) {
         clearInterval(x1);
         document.getElementById("time1").innerHTML = task1 + " "+time1+ " すぎた (" + calc_time0()+")";
