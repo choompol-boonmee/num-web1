@@ -18,6 +18,7 @@ table, th, td {
 </style>
 
 <script>
+var time0 = calc_time0();
 var task1 = "ねる";
 var time1 = "21:45";
 </script>
@@ -147,7 +148,7 @@ var x1 = setInterval(function() {
       var minutes = Math.floor((dist % (1000 * 60 * 60)) / (1000 * 60));
       var seconds = Math.floor((dist % (1000 * 60)) / 1000);
       document.getElementById("time1").innerHTML = task1 + " : " + hours + "h " + minutes + "m " + seconds + "s (" 
-        + calc_time0()+"-"+time1+")";
+        + time0+"-"+time1+")";
       if (dist < 0) {
         clearInterval(x1);
         document.getElementById("time1").innerHTML = task1 + " "+time1+ " すぎた (" + calc_time0()+")";
