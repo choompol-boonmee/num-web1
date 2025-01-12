@@ -18,6 +18,19 @@ table, th, td {
 </style>
 
 <script>
+function addZero(i) {
+  if (i < 10) {i = "0" + i}
+  return i;
+}
+
+function calc_time0() {
+  var d = new Date();
+  let hh = addZero(d.getHours());
+  let mi = addZero(d.getMinutes());
+  let se = addZero(d.getSeconds());
+  return hh+":"+mi;
+}
+
 var time0 = calc_time0();
 var task1 = "ねる";
 var time1 = "21:45";
@@ -84,18 +97,6 @@ NUM
 
 <script>
 
-function addZero(i) {
-  if (i < 10) {i = "0" + i}
-  return i;
-}
-
-function calc_time0() {
-  var d = new Date();
-  let hh = addZero(d.getHours());
-  let mi = addZero(d.getMinutes());
-  let se = addZero(d.getSeconds());
-  return hh+":"+mi;
-}
 
 function calc_time(tm) {
   var toda = new Date();
