@@ -46,6 +46,7 @@ var time1 = "21:45";
     <td style="text-align: center; width: 20%; color:blue">自由への脱出</td>
     <td style="text-align: center; width: 20%; color:green">限られた時間</td>
     <td style="text-align: center; width: 20%; color:green">価値ある人生</td>
+    <td id='ts'></td>
   </tr>
 </table>
 
@@ -114,6 +115,8 @@ function w3_open() {
 function w3_close() {
   document.getElementById("mySidebar").style.display = "none";
 }
+
+document.getElementById("ts").innerHTML = time0;
 
 wowday = new Date("Mar 5, 2068");
 bbroday = new Date("Mar 5, 2024");
