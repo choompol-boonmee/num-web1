@@ -118,7 +118,7 @@ function calc_time(tm) {
 function calc_time2(tm) {
   var toda = new Date();
   yy = toda.getFullYear();
-  mm = addZero(toda.getMonth());
+  mm = addZero(toda.getMonth()+1);
   dd = addZero(toda.getDate());
   var targ = yy+"-"+mm+" "+dd+" "+tm;
   return targ;
