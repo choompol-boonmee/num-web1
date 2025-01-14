@@ -66,6 +66,12 @@ var time1 = "21:45";
     <td id="time1" style="text-align: center; width: 50%"></td>
   </tr>
 </table>
+  
+<table style="width: 100%">
+  <tr>
+    <td id="text1" style="text-align: center; width: 50%"></td>
+  </tr>
+</table>
 
 <table style="width: 100%">
   <tr>
@@ -157,6 +163,9 @@ var x1 = setInterval(function() {
         clearInterval(x1);
         document.getElementById("time1").innerHTML = task1 + " "+time1+ " すぎた (" + calc_time0()+")";
       }
+
+      document.getElementById("text1").innerHTML = calc_time(time1);
+  
   }, 1000);
 
 </script>
