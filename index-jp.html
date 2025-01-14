@@ -178,7 +178,6 @@ var x1 = setInterval(function() {
         clearInterval(x1);
         document.getElementById("time1").innerHTML = task1 + " "+time1+ " すぎた (" + calc_time0()+")";
       }
-
       var dtime2 = new Date(calc_time2(time1)).getTime();
       document.getElementById("text1").innerHTML = "T1:"+ dtime2;
       document.getElementById("text2").innerHTML = "T2:"+ now;
