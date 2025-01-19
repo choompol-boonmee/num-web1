@@ -158,17 +158,11 @@ var x1 = setInterval(function() {
       var hours = Math.floor((dist % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
       var minutes = Math.floor((dist % (1000 * 60 * 60)) / (1000 * 60));
       var seconds = Math.floor((dist % (1000 * 60)) / 1000);
-      var msg = "残り";
+      var msg = "残っている";
       if (sign>0) {
-        msg = "過ぎた";
+        msg = "過ぎている";
       }
-      document.getElementById("time1").innerHTML = task1 + " : "+msg+" : " + hours + "h " + minutes + "m " + seconds + "s (" +time1+")";
-  /*
-      if (dist < 0) {
-        clearInterval(x1);
-        document.getElementById("time1").innerHTML = task1 + " "+time1+ " すぎた (" + calc_time0()+")";
-      }
-      */
+      document.getElementById("time1").innerHTML = task1 + " まで "+" : " + hours + "h " + minutes + "m " + seconds + "s"+msg+" (" +time1+")";
   }, 1000);
 
 </script>
