@@ -148,16 +148,23 @@ life_left();
 var x1 = setInterval(function() {
       var now = new Date().getTime();
       var dtime = new Date(calc_time(time1)).getTime();
+      var sign = 0;
       var dist = dtime - now;
+      if (dist<0) {
+        sign = 1;
+        dist = -dist;
+      }
       var days = Math.floor(dist / (1000 * 60 * 60 * 24));
       var hours = Math.floor((dist % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
       var minutes = Math.floor((dist % (1000 * 60 * 60)) / (1000 * 60));
       var seconds = Math.floor((dist % (1000 * 60)) / 1000);
       document.getElementById("time1").innerHTML = task1 + " : " + hours + "h " + minutes + "m " + seconds + "s (" +time1+")";
+  /*
       if (dist < 0) {
         clearInterval(x1);
         document.getElementById("time1").innerHTML = task1 + " "+time1+ " すぎた (" + calc_time0()+")";
       }
+      */
   }, 1000);
 
 </script>
