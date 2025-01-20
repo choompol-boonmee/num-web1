@@ -198,12 +198,14 @@ function job1(tk, tm, tg) {
 
 var x1 = setInterval(function() {
   for (let i = 0; i < tasks.length; i++) {
-    console.log(tasks[i][0]+' : '+tasks[i][1]+' : '+tasks[i][2]);
+    jobs(tasks[i][0], tasks[i][1], tasks[i][2]);
   }
+  /*
   job1(task1, time1, "time1");
   job1(task2, time2, "time2");
   job1(task3, time3, "time3");
   job1(task4, time4, "time4");
+  */
 }, 1000);
 
 </script>
