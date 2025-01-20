@@ -158,23 +158,26 @@ life_left();
 function job1(tk, tm, tg) {
   var wk = tm.substr(0,1);
   time = tm.substr(2);
-      var now = new Date().getTime();
-      var dtime = new Date(calc_time(time)).getTime();
-      var sign = 0;
-      var dist = dtime - now;
-      if (dist<0) {
-        sign = 1;
-        dist = -dist;
-      }
-      var days = Math.floor(dist / (1000 * 60 * 60 * 24));
-      var hours = Math.floor((dist % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      var minutes = Math.floor((dist % (1000 * 60 * 60)) / (1000 * 60));
-      var seconds = Math.floor((dist % (1000 * 60)) / 1000);
-      var msg = "残っている";
-      if (sign>0) {
-        msg = "過ぎている";
-      }
-      document.getElementById(tg).innerHTML = tk + " まで "+" : " + hours + "h " + minutes + "m " + seconds + "s  "+msg+" (" +time1+")"; 
+  
+  var now = new Date().getTime();
+  var dtime = new Date(calc_time(time)).getTime();
+  var sign = 0;
+  var dist = dtime - now;
+  if (dist<0) {
+    sign = 1;
+    dist = -dist;
+  }
+  var days = Math.floor(dist / (1000 * 60 * 60 * 24));
+  var hours = Math.floor((dist % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var minutes = Math.floor((dist % (1000 * 60 * 60)) / (1000 * 60));
+  var seconds = Math.floor((dist % (1000 * 60)) / 1000);
+  var msg = "残っている";
+  if (sign>0) {
+    msg = "過ぎている";
+  }
+  var dd = Number(wk) - now.getDay();
+  var txt = tk + " まで "+" : " + hours + "h " + minutes + "m " + seconds + "s  "+msg+" (" +time+")" + dd;
+  document.getElementById(tg).innerHTML = txt;
 }
 
 var x1 = setInterval(function() {
