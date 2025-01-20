@@ -192,7 +192,7 @@ function job1(tk, tm, tg) {
   var txt = tk + " まで "+" : " + hours + "h " + minutes + "m " + seconds + "s  "+msg+" (" +time+")";
   if(wd<7) {
     if(dd>0) {
-      txt = tk + " まで "+" : " + dd + "日";
+      txt = tk + " まで "+" : " + dd + "日"+" (" +time+")";
     } else if(dd==0 && sign==0) {
     } else {
       txt = "";
@@ -205,12 +205,6 @@ var x1 = setInterval(function() {
   for (let i = 0; i < tasks.length; i++) {
     job1(tasks[i][0], tasks[i][1], tasks[i][2]);
   }
-  /*
-  job1(task1, time1, "time1");
-  job1(task2, time2, "time2");
-  job1(task3, time3, "time3");
-  job1(task4, time4, "time4");
-  */
 }, 1000);
 
 </script>
