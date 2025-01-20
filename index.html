@@ -27,10 +27,10 @@ var task2 = "CN201:505/2";
 var time2 = "2:13:30";
 
 var task3 = "CN408:306";
-var time3 = "4:09:30";
+var time3 = "1:09:30";
 
 var task4 = "CN335:304";
-var time4 = "4:13:30";
+var time4 = "1:13:30";
 
   
 function addZero(i) {
@@ -182,6 +182,7 @@ function job1(tk, tm, tg) {
   if(wd<7) {
     if(dd>0) {
       txt = tk + " まで "+" : " + dd + "日";
+    } else if(dd==0) {
     } else {
       txt = "";
     }
@@ -194,26 +195,7 @@ var x1 = setInterval(function() {
   job1(task2, time2, "time2");
   job1(task3, time3, "time3");
   job1(task4, time4, "time4");
-  /*
-      var now = new Date().getTime();
-      var dtime = new Date(calc_time(time1)).getTime();
-      var sign = 0;
-      var dist = dtime - now;
-      if (dist<0) {
-        sign = 1;
-        dist = -dist;
-      }
-      var days = Math.floor(dist / (1000 * 60 * 60 * 24));
-      var hours = Math.floor((dist % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      var minutes = Math.floor((dist % (1000 * 60 * 60)) / (1000 * 60));
-      var seconds = Math.floor((dist % (1000 * 60)) / 1000);
-      var msg = "残っている";
-      if (sign>0) {
-        msg = "過ぎている";
-      }
-      document.getElementById("time1").innerHTML = task1 + " まで "+" : " + hours + "h " + minutes + "m " + seconds + "s  "+msg+" (" +time1+")";
-  */
-  }, 1000);
+}, 1000);
 
 </script>
 
