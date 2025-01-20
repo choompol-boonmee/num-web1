@@ -176,8 +176,16 @@ function job1(tk, tm, tg) {
   if (sign>0) {
     msg = "過ぎている";
   }
-  var dd = Number(wk) - today.getDay();
-  var txt = tk + " まで "+" : " + hours + "h " + minutes + "m " + seconds + "s  "+msg+" (" +time+")" + dd;
+  var wd = Number(wk);
+  var dd = wd - today.getDay();
+  var txt = tk + " まで "+" : " + hours + "h " + minutes + "m " + seconds + "s  "+msg+" (" +time+")";
+  if(wd<7) {
+    if(dd>0) {
+      txt = tk + " まで "+" : " + dd + "日";
+    } else {
+      txt = "";
+    }
+  }
   document.getElementById(tg).innerHTML = txt;
 }
 
