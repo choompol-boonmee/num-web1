@@ -19,9 +19,20 @@ table, th, td {
 
 <script>
 var time0 = calc_time0();
-var task1 = "寝る";
-var time1 = "21:30";
 
+var task1 = "寝る";
+var time1 = "a:21:30";
+
+var task2 = "CN201:505/2";
+var time2 = "2:13:30";
+
+var task3 = "CN408:306";
+var time3 = "4:09:30";
+
+var task4 = "CN335:304";
+var time4 = "4:13:30";
+
+  
 function addZero(i) {
   if (i < 10) {i = "0" + i}
   return i;
@@ -145,8 +156,10 @@ function life_left() {
 life_left();
 
 function job1(tk, tm) {
+  var wk = tm.substr(0,1);
+  time = tm.substr(2);
       var now = new Date().getTime();
-      var dtime = new Date(calc_time(tm)).getTime();
+      var dtime = new Date(calc_time(time)).getTime();
       var sign = 0;
       var dist = dtime - now;
       if (dist<0) {
