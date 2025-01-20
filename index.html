@@ -20,23 +20,11 @@ table, th, td {
 <script>
 var time0 = calc_time0();
 
-var task1 = "寝る";
-var time1 = "7:21:30";
-
-var task2 = "CN201:505/2";
-var time2 = "2:13:30";
-
-var task3 = "CN408:306";
-var time3 = "4:09:30";
-
-var task4 = "CN335:304";
-var time4 = "4:13:30";
-
 var tasks = [
   ["寝る", "7:21:30", "time1"],
-  ["CN201:505/2", "2:13:30", "time2"],
-  ["CN408:306", "4:09:30", "time3"],
-  ["CN335:304", "4:13:30", "time4"],
+  ["201:505/2", "2:13:30", "time2"],
+  ["408:306", "4:09:30", "time3"],
+  ["335:304", "4:13:30", "time4"],
 ];
   
 function addZero(i) {
@@ -192,7 +180,7 @@ function job1(tk, tm, tg) {
   var txt = tk + " まで "+" : " + hours + "h " + minutes + "m " + seconds + "s  "+msg+" (" +time+")";
   if(wd<7) {
     if(dd>0) {
-      txt = tk + " まで "+" : " + dd + "日"+" (" +time+")";
+      txt = tk + " : " + dd + "D"+" (" +time+")";
     } else if(dd==0 && sign==0) {
     } else {
       txt = "";
