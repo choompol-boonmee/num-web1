@@ -32,6 +32,12 @@ var time3 = "4:09:30";
 var task4 = "CN335:304";
 var time4 = "4:13:30";
 
+var tasks = [
+  ["寝る", "7:21:30", "time1"],
+  ["CN201:505/2", "2:13:30", "time2"],
+  ["CN408:306", "4:09:30", "time3"],
+  ["CN335:304", "4:13:30", "time4"],
+];
   
 function addZero(i) {
   if (i < 10) {i = "0" + i}
@@ -191,6 +197,9 @@ function job1(tk, tm, tg) {
 }
 
 var x1 = setInterval(function() {
+  for (let i = 0; i < tasks.length; i++) {
+    console.log(tasks[i][0]+' : '+tasks[i][1]+' : '+tasks[i][2]);
+  }
   job1(task1, time1, "time1");
   job1(task2, time2, "time2");
   job1(task3, time3, "time3");
