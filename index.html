@@ -159,7 +159,8 @@ function job1(tk, tm, tg) {
   var wk = tm.substr(0,1);
   time = tm.substr(2);
   
-  var now = new Date().getTime();
+  var today = new Date();
+  var now = today.getTime();
   var dtime = new Date(calc_time(time)).getTime();
   var sign = 0;
   var dist = dtime - now;
@@ -175,7 +176,7 @@ function job1(tk, tm, tg) {
   if (sign>0) {
     msg = "過ぎている";
   }
-  var dd = Number(wk) - now.getDay();
+  var dd = Number(wk) - today.getDay();
   var txt = tk + " まで "+" : " + hours + "h " + minutes + "m " + seconds + "s  "+msg+" (" +time+")" + dd;
   document.getElementById(tg).innerHTML = txt;
 }
