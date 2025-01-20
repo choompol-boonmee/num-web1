@@ -70,9 +70,10 @@ NUM
 </table>
 
 <table style="width: 100%">
-  <tr>
-    <td id="time1" style="text-align: center; width: 50%"></td>
-  </tr>
+  <tr><td id="time1" style="text-align: center; width: 50%"></td></tr>
+  <tr><td id="time2" style="text-align: center; width: 50%"></td></tr>
+  <tr><td id="time3" style="text-align: center; width: 50%"></td></tr>
+  <tr><td id="time4" style="text-align: center; width: 50%"></td></tr>
 </table>
 
 <table style="width: 100%">
@@ -121,8 +122,6 @@ function w3_close() {
 document.getElementById("ts").innerHTML = time0;
 
 wowday = new Date("Mar 5, 2068");
-bbroday = new Date("Mar 5, 2024");
-cimug = new Date("Oct 3, 2024");
 
 function days_left(date2) {
   var date1 = new Date();
@@ -145,7 +144,29 @@ function life_left() {
 
 life_left();
 
+function job1(tk, tm) {
+      var now = new Date().getTime();
+      var dtime = new Date(calc_time(tm)).getTime();
+      var sign = 0;
+      var dist = dtime - now;
+      if (dist<0) {
+        sign = 1;
+        dist = -dist;
+      }
+      var days = Math.floor(dist / (1000 * 60 * 60 * 24));
+      var hours = Math.floor((dist % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      var minutes = Math.floor((dist % (1000 * 60 * 60)) / (1000 * 60));
+      var seconds = Math.floor((dist % (1000 * 60)) / 1000);
+      var msg = "残っている";
+      if (sign>0) {
+        msg = "過ぎている";
+      }
+      document.getElementById("time1").innerHTML = tk + " まで "+" : " + hours + "h " + minutes + "m " + seconds + "s  "+msg+" (" +time1+")"; 
+}
+
 var x1 = setInterval(function() {
+  job1(task1, time1);
+  /*
       var now = new Date().getTime();
       var dtime = new Date(calc_time(time1)).getTime();
       var sign = 0;
@@ -163,6 +184,7 @@ var x1 = setInterval(function() {
         msg = "過ぎている";
       }
       document.getElementById("time1").innerHTML = task1 + " まで "+" : " + hours + "h " + minutes + "m " + seconds + "s  "+msg+" (" +time1+")";
+  */
   }, 1000);
 
 </script>
