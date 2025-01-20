@@ -155,7 +155,7 @@ function life_left() {
 
 life_left();
 
-function job1(tk, tm) {
+function job1(tk, tm, tg) {
   var wk = tm.substr(0,1);
   time = tm.substr(2);
       var now = new Date().getTime();
@@ -174,14 +174,14 @@ function job1(tk, tm) {
       if (sign>0) {
         msg = "過ぎている";
       }
-      document.getElementById("time1").innerHTML = tk + " まで "+" : " + hours + "h " + minutes + "m " + seconds + "s  "+msg+" (" +time1+")"; 
+      document.getElementById(tg).innerHTML = tk + " まで "+" : " + hours + "h " + minutes + "m " + seconds + "s  "+msg+" (" +time1+")"; 
 }
 
 var x1 = setInterval(function() {
-  job1(task1, time1);
-  job1(task2, time2);
-  job1(task3, time3);
-  job1(task4, time4);
+  job1(task1, time1, "time1");
+  job1(task2, time2, "time2");
+  job1(task3, time3, "time3");
+  job1(task4, time4, "time4");
   /*
       var now = new Date().getTime();
       var dtime = new Date(calc_time(time1)).getTime();
